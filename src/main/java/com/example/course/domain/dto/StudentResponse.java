@@ -3,6 +3,7 @@ package com.example.course.domain.dto;
 import java.util.Objects;
 
 import com.example.course.domain.Grade;
+import com.example.course.domain.Student;
 
 import lombok.Getter;
 
@@ -51,5 +52,9 @@ public class StudentResponse {
 	@Override
 	public int hashCode() {
 		return Objects.hash(getId(), getName(), getAge(), getGrade());
+	}
+
+	public static StudentResponse from(Student student){
+		return new StudentResponse(student.getId(),student.getName(),student.getAge(),student.getGrade());
 	}
 }

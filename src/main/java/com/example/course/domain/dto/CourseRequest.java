@@ -2,6 +2,7 @@ package com.example.course.domain.dto;
 
 import java.util.Objects;
 
+import com.example.course.domain.Course;
 import com.example.course.domain.Grade;
 
 import lombok.Getter;
@@ -45,5 +46,9 @@ public class CourseRequest {
 	@Override
 	public int hashCode() {
 		return Objects.hash(getName(), getMinGrade(), getMaxAttendees());
+	}
+
+	public Course toCourse() {
+		return new Course(name,minGrade,maxAttendees);
 	}
 }

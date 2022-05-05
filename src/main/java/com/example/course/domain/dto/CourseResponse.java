@@ -2,6 +2,7 @@ package com.example.course.domain.dto;
 
 import java.util.Objects;
 
+import com.example.course.domain.Course;
 import com.example.course.domain.Grade;
 
 import lombok.Getter;
@@ -22,6 +23,11 @@ public class CourseResponse {
 		this.name = name;
 		this.minGrade = minGrade;
 		this.maxAttendees = maxAttendees;
+	}
+
+	public static CourseResponse from(Course savedCourse) {
+		return new CourseResponse(savedCourse.getId(), savedCourse.getName(), savedCourse.getMinGrade(),
+			savedCourse.getMaxAttendees());
 	}
 
 	@Override

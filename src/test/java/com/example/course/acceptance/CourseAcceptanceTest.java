@@ -49,8 +49,6 @@ public class CourseAcceptanceTest extends AcceptanceTest{
 		정상_등록_검증(수강_신청_결과);
 	}
 
-
-
 	@DisplayName("최대 정원을 넘어서 수강을 신청할 수 없다.")
 	@Test
 	public void takeCourse_exception1(){
@@ -90,6 +88,10 @@ public class CourseAcceptanceTest extends AcceptanceTest{
 	@DisplayName("수강신청 후 취소할 수 있어야 한다.")
 	@Test
 	public void take_and_cancel_course(){
+
+		/**
+		 * 다음과 같이 여러 개의 시나리오를 연결하여 테스트하는 것도 좋은 인수테스트 방법입니다.
+		 */
 
 		//given
 			// 과목을 등록한다.

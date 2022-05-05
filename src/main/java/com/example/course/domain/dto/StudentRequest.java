@@ -3,6 +3,7 @@ package com.example.course.domain.dto;
 import java.util.Objects;
 
 import com.example.course.domain.Grade;
+import com.example.course.domain.Student;
 
 import lombok.Getter;
 
@@ -20,6 +21,10 @@ public class StudentRequest {
 		this.name = name;
 		this.age = age;
 		this.grade = grade;
+	}
+
+	public Student toStudent(){
+		return new Student(name,age,grade);
 	}
 
 	@Override
